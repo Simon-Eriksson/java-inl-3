@@ -21,7 +21,7 @@
     border-radius: 10px;
 }
 
-..todo-app h2 {
+.todo-app h2 {
     color: #002765;
     display: flex;
     align-items: center;
@@ -49,6 +49,7 @@ input {
     outline: none;
     background: transparent;
     padding: 10px;
+    font-weight: 14px;
 }
 
 button {
@@ -77,7 +78,7 @@ ul li::before {
     height: 28px;
     width: 28px;
     border-radius: 50%;
-    background-image: url(images/unchecked.png);
+    background-image: url(images.inl3/unchecked.png);
     background-size: cover;
     background-position: center;
     top: 12px;
@@ -90,7 +91,7 @@ ul li.checked{
 }
 
 ul li.checked::before {
-    background-image: url(images/checked.png);
+    background-image: url(images.inl3/checked.png);
 }
 
 ul li span {

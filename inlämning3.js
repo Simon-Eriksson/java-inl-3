@@ -13,22 +13,30 @@ function addTask(){
         span.innerHTML = "\u00d7";
         li.appendChild(span);
     }
-    inputBox.value = ""
+    inputBox.value = "";
+    saveData();
 }
 
 listContainer.addEventListener("click", function(e){
     if(e.target.tagName === "LI"){
         e.target.classList.toggle("checked");
+        saveData();
     }
     else if(e.target.tagName === "SPAN") {
-        e.target.parentElement.romove();
+        e.target.parentElement.remove();
+        saveData();
     }
 },false)
 
+function saveData(){
+    localStorage.setItem("data", listContainer.innerHTML)
+}
 
+function showTask(){
+    listContainer.innerHTML = localStorage.getItem("data");
+}
 
-
-
+showTask();
 
 
 //Följande funktionalitet måste implementeras:
@@ -44,5 +52,7 @@ listContainer.addEventListener("click", function(e){
 //Titel
 //Beskrivning
 //Avklarad (boolean)
+
+
 //Skapad datum
 //Avklarad datum
