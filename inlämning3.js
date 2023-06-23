@@ -47,22 +47,3 @@ function calcTime(timeStamp) {
 }
 
 showTask();
-
-
-//Följande funktionalitet måste implementeras:
-//
-//Skapa todo med titel och beskrivning
-//Lista upp färdiga- och ofärdiga todos
-//Avklara todo (check av)
-//Ta bort todo
-//
-//
-//En todo ska minst bestå av:
-//
-//Titel
-//Beskrivning
-//Avklarad (boolean)
-
-
-//Skapad datum
-//Avklarad datum
