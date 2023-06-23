@@ -7,10 +7,13 @@ function addTask(){
     }
     else{
         let li = document.createElement("li");
-        li.innerText = inputBox.value;
+        let timeStamp = document.createElement("timeStamp");
+        li.innerText = inputBox.value + " ";
+        calcTime(timeStamp);
         listContainer.appendChild(li);
         let span = document.createElement("span");
         span.innerHTML = "\u00d7";
+        li.appendChild(timeStamp);
         li.appendChild(span);
     }
     inputBox.value = "";
@@ -20,6 +23,8 @@ function addTask(){
 listContainer.addEventListener("click", function(e){
     if(e.target.tagName === "LI"){
         e.target.classList.toggle("checked");
+        const timeStamp = e.target.querySelector("timeStamp");
+        calcTime(timeStamp);
         saveData();
     }
     else if(e.target.tagName === "SPAN") {
@@ -34,6 +39,11 @@ function saveData(){
 
 function showTask(){
     listContainer.innerHTML = localStorage.getItem("data");
+}
+
+function calcTime(timeStamp) {
+    var d = new Date().toLocaleString("en-GB", {timeZone: "CET"})
+    timeStamp.innerText = d;
 }
 
 showTask();
